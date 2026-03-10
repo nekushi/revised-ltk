@@ -19,7 +19,9 @@ export default async function AdminInventory({
     <div className="p-2">
       <h1>This is admin inventory</h1>
 
-      <SearchAndFilters />
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchAndFilters />
+      </Suspense>
 
       <AdminAddItem />
 
