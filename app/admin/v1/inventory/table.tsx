@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import { TypeInventories } from "@/dal/admin/inventory/get-items";
 import { use, useMemo } from "react";
 import AdminEditItem from "@/components/admin/inventory/edit-item";
