@@ -12,3 +12,19 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model AdminInventory {
+  id               String   @id @default(uuid())
+  supplier_name    String
+  tin_number       String
+  product_name     String
+  item_recognition String
+  quantity         Float
+  measurement      String
+  unit_price       Float
+  created_at       DateTime
+  updated_at       DateTime
+
+  db_created_at DateTime
+  db_updated_at DateTime
+}
