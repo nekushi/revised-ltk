@@ -7,7 +7,10 @@ export async function deleteItem(prevState: unknown, formdata: FormData) {
   const id = String(formdata.get("id") ?? "");
 
   try {
-    const item = await prisma.adminInventory.delete({ where: { id } });
+    await prisma.adminInventory.delete({
+      where: { id },
+    });
+
     revalidatePath("/admin/v1/inventory");
     return {
       success: true,
@@ -15,6 +18,7 @@ export async function deleteItem(prevState: unknown, formdata: FormData) {
     };
   } catch (error) {
     console.log(error);
+
     return {
       success: false,
       message: "Something went wrong",
