@@ -13,6 +13,36 @@ datasource db {
   provider = "postgresql"
 }
 
+enum Role {
+  admin
+  hr
+  inventory
+  branch
+  delivery
+}
+
+model User {
+  id          String  @id @default(uuid())
+  first_name  String
+  last_name   String
+  role        Role
+  username    String
+  password    String
+  sss         String?
+  pag_ibig    String?
+  phil_health String?
+  tin_number  String?
+  contact_no  String?
+  email       String?
+  address     String?
+
+  created_at DateTime
+  updated_at DateTime
+
+  db_created_at DateTime
+  db_updated_at DateTime
+}
+
 model AdminInventory {
   id               String   @id @default(uuid())
   supplier_name    String
