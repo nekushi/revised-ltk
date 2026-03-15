@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { fetchUsers, TypeUser } from "@/dal/hr/user/get-users";
 import SearchAndFilters from "./search-and-filters";
 import HrUserTable, { TypeSearchAndFilters } from "./user-table";
